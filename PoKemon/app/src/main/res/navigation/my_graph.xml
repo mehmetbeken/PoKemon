@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_graph"
+    app:startDestination="@id/pokemonFragment">
+
+    <fragment
+        android:id="@+id/pokemonFragment"
+        android:name="com.mehmetbeken.kerim.Fragment.PokemonFragment"
+        android:label="Pokémon"
+        tools:layout="@layout/fragment_pokemon" >
+        <action
+            android:id="@+id/action_pokemonFragment_to_typeFragment"
+            app:destination="@id/typeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/typeFragment"
+        android:name="com.mehmetbeken.kerim.Fragment.TypeFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_type">
+        <argument android:name="description" />
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
